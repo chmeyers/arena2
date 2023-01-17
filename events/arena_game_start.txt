@@ -1,0 +1,205 @@
+## Destroy any extra systems that spawned
+
+namespace = arena_game_start
+
+
+
+country_event = {# Destroy any extra systems
+	id = arena_game_start.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_system = {
+			limit = {
+				nor = {
+					has_star_flag = arena_home_system
+					has_star_flag = arena_battle_system
+				}
+			}
+			# There might be a way to remove the systems entirely, but I couldn't find it and don't care
+			destroy_star_system = yes # Turn them into blackholes
+			isolate_system = yes # Remove the hyperlanes
+		}
+	}
+}
+
+country_event = {# Country setup
+	id = arena_game_start.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_system = {
+			limit = {
+				has_star_flag = arena_home_system
+			}
+			set_surveyed = {
+				surveyed = yes
+			}
+			create_starbase = {
+				size = starbase_outpost
+				owner = root.owner
+			}	
+		}
+	}
+
+	immediate = {
+		every_system = {
+			limit = {
+			  has_star_flag = arena_battle_system
+			}
+			save_global_event_target_as = arena_system
+			set_surveyed = {
+				surveyed = yes
+			}
+		}
+	}
+
+}
+
+event = {# Destroy any extra systems
+	id = arena_game_start.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		event_target:global_event_country = {
+			country_event = {
+				id = arena_game_start.3
+			}
+		}
+	}
+}
+
+event = {# Setup the systems
+	id = arena_game_start.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			save_global_event_target_as = arena_ally_country
+			country_event = {
+				id = arena_game_start.4
+			}
+		}
+		#Create Arena Country
+		if = {
+			limit = { NOT = { exists = event_target:arena_enemy_country } }
+			create_country = {
+				name = "NAME_Arena_enemy"
+				type = arena_enemy_entity
+			}
+			last_created_country = {
+				# Ugh, why aren't arrays supported....
+				# Initial enemy fleet strengths
+				set_variable = { which = current_enemy_fleet value = 1 }
+				set_variable = { which = enemy_fleet_strength_1 value = 120 }
+				set_variable = { which = enemy_fleet_strength_2 value = 120 }
+				set_variable = { which = enemy_fleet_strength_3 value = 120 }
+				set_variable = { which = enemy_fleet_strength_4 value = 120 }
+				set_variable = { which = enemy_fleet_strength_5 value = 120 }
+				set_variable = { which = enemy_fleet_strength_6 value = 120 }
+				set_variable = { which = enemy_fleet_strength_7 value = 120 }
+				set_variable = { which = enemy_fleet_strength_8 value = 150 }
+				set_variable = { which = enemy_fleet_strength_9 value = 185 }
+				set_variable = { which = enemy_fleet_strength_10 value = 100 }
+				set_variable = { which = enemy_fleet_strength_11 value = 130 }
+				set_variable = { which = enemy_fleet_strength_12 value = 120 }
+				set_variable = { which = enemy_fleet_strength_13 value = 120 }
+				set_variable = { which = enemy_fleet_strength_14 value = 120 }
+				set_variable = { which = enemy_fleet_strength_15 value = 120 }
+				set_variable = { which = enemy_fleet_strength_16 value = 120 }
+				set_variable = { which = enemy_fleet_strength_17 value = 60 }
+				set_variable = { which = enemy_fleet_strength_18 value = 25 }
+				set_variable = { which = enemy_fleet_strength_19 value = 10 }
+				set_variable = { which = enemy_fleet_strength_20 value = 10 }
+
+				# Initial ally fleet composition.
+				set_variable = { which = current_ally1_design value = 1 }
+				set_variable = { which = current_ally1_count value = 8 }
+				set_variable = { which = current_ally2_design value = 100 }
+				set_variable = { which = current_ally2_count value = 4 }
+				set_variable = { which = current_ally3_design value = 200 }
+				set_variable = { which = current_ally3_count value = 2 }
+				set_variable = { which = current_ally4_design value = 300 }
+				set_variable = { which = current_ally4_count value = 1 }
+				set_variable = { which = current_ally5_design value = 101 }
+				set_variable = { which = current_ally5_count value = 4 }
+				set_variable = { which = current_ally6_design value = 201 }
+				set_variable = { which = current_ally6_count value = 2 }
+				set_variable = { which = current_ally7_design value = 301 }
+				set_variable = { which = current_ally7_count value = 1 }
+				set_variable = { which = current_ally8_design value = 1 }
+				set_variable = { which = current_ally8_count value = 8 }
+				set_variable = { which = current_ally9_design value = 101 }
+				set_variable = { which = current_ally9_count value = 4 }
+				set_variable = { which = current_ally10_design value = 201 }
+				set_variable = { which = current_ally10_count value = 2 }
+				set_variable = { which = current_ally11_design value = 300 }
+				set_variable = { which = current_ally11_count value = 1 }
+				set_variable = { which = current_ally12_design value = 0 }
+				set_variable = { which = current_ally12_count value = 8 }
+				set_variable = { which = current_ally13_design value = 0 }
+				set_variable = { which = current_ally13_count value = 8 }
+				set_variable = { which = current_ally14_design value = 0 }
+				set_variable = { which = current_ally14_count value = 8 }
+				set_variable = { which = current_ally15_design value = 1 }
+				set_variable = { which = current_ally15_count value = 8 }
+
+				set_variable = { which = current_randomize_slot value = 1 }
+				set_variable = { which = current_randomize_type value = 1 }
+				save_global_event_target_as = arena_enemy_country
+			}
+			save_current_fleet_as_champion = yes
+		}
+	}
+}
+
+event = { # Setup the initial fleets
+  id = arena_game_start.5
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		event_target:arena_system = {
+			update_ally_fleet = yes # Update once before we start, just to get the variables correct
+			create_arena_enemy_fleet = yes
+			create_arena_ally_fleet = yes
+		}
+	}
+
+}
+
+event = { # Give the ally resources
+  id = arena_game_start.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:arena_ally_country = {
+			add_resource = { minerals = 50000 }
+			add_resource = { energy = 50000 }
+			add_resource = { food = 10000 }
+			add_resource = { influence = 1000 }
+			add_resource = { alloys = 20000 }
+			add_resource = { consumer_goods = 20000 }
+			add_resource = { alloys = 20000 }
+			add_resource = { exotic_gases = 10000 }
+			add_resource = { volatile_motes = 10000 }
+			add_resource = { rare_crystals = 10000 }
+			add_resource = { sr_dark_matter = 10000 }
+			add_resource = { sr_zro = 10000 }
+			add_resource = { unity = 1000 }
+		}
+	}
+
+}
+

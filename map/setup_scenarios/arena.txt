@@ -1,0 +1,72 @@
+static_galaxy_scenario = {
+	name = "arena"
+	default = no
+	priority = -1
+	#num_stars = 0
+	#radius = 10
+	num_empires = { min = 0 max = 0 }
+	num_empire_default = 0
+	fallen_empire_default = 0
+	fallen_empire_max = 0
+	marauder_empire_default = 0
+	marauder_empire_max = 0
+	advanced_empire_default = 0
+	colonizable_planet_odds = 0.0
+	primitive_odds = 0.0
+	crisis_strength = 0.0
+
+	#num_nebulas	= 0
+	#nebula_min_dist = 0
+	#nebula_size = 0
+	open_space_partitions = {
+		max_systems = 0
+		min_systems = 0
+		min_bridges = 0
+		max_bridges = 0
+		method = depth_first
+	}
+	home_system_partitions = {
+		max_systems = 2
+		min_systems = 0
+		min_bridges = 0
+		max_bridges = 0
+		method = breadth_first
+	}
+
+	max_hyperlane_distance = 100
+
+	num_wormhole_pairs = { min = 0 max = 0 }
+	num_wormhole_pairs_default = 0
+	num_gateways = { min = 0 max = 0 }
+	num_gateways_default = 0
+	num_hyperlanes = { min=0.0 max= 0 }
+	num_hyperlanes_default = 0.0
+
+
+	# BLUE SYSTEM
+	system = {
+		id = "1_home"
+		name = "home"
+		position = {
+			x = 200
+			y = 0
+		}
+		initializer = arena_home_init
+		spawn_weight = { base = 1 }
+	}
+
+  # ARENA SYSTEM
+	system = {
+		id = "1_arena"
+		name = "arena"
+		position = {
+			x = 150
+			y = 0
+		}
+		initializer = arena_system_01
+	}
+
+	add_hyperlane = { from = "1_home" to = "1_arena" }
+
+	supports_shape = arena
+}

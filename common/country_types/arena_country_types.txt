@@ -1,0 +1,28 @@
+#The country type of the controller for the arena enemy fleets.
+arena_enemy_entity = {
+	is_space_critter = yes
+	blocks_piracy = yes
+	government = no
+	observable = no
+	uses_origins = no
+	can_use_invalid_technology = yes
+	has_deficits = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = yes
+		needs_border_access = yes
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+		needs_colony = no
+	}
+	modules = {
+		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
+		}
+		basic_technology_module = {}
+		standard_event_module = {}
+	}
+}

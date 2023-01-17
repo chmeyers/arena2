@@ -1,0 +1,1196 @@
+
+
+create_arena_enemy_type_fleet = {
+	event_target:arena_enemy_country = {
+		create_fleet = {
+			name = $FLEET_NAME$
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				can_disband = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = event_target:arena_enemy_country
+				set_variable = { which = remaining_strength value = $STRENGTH$ }
+
+				[[SHIP5_DESIGN]
+				set_variable = { which = num_ship5 value = remaining_strength }
+				# These can use a percentage of the strength and count as N size each.
+				multiply_variable = { which = num_ship5 value = $SHIP5_PERCENTAGE|0.2$}
+				divide_variable = { which = num_ship5 value = $SHIP5_SIZE|8$}
+				# Truncate to be an integer.
+				floor_variable = num_ship5
+
+				# Add the ships
+				while = {
+					count = num_ship5
+					create_ship = {
+						name = random
+						design = $SHIP5_DESIGN$
+						#[[CULTURE] graphical_culture = $CULTURE$ ]
+					}
+				}
+				# Remove the ships used from the remaining strength
+				multiply_variable = { which = num_ship5 value = $SHIP5_SIZE|8$ }
+				subtract_variable = {
+					which = remaining_strength
+					value = num_ship5
+				}
+				] # END SHIP5_DESIGN
+
+				[[SHIP4_DESIGN]
+				set_variable = { which = num_ship4 value = remaining_strength }
+				# These can use a percentage of the strength and count as N size each.
+				multiply_variable = { which = num_ship4 value = $SHIP4_PERCENTAGE|0.25$ }
+				divide_variable = { which = num_ship4 value = $SHIP4_SIZE|8$ }
+				# Truncate to be an integer.
+				floor_variable = num_ship4
+
+				# Add the ships
+				while = {
+					count = num_ship4
+					create_ship = {
+						name = random
+						design = $SHIP4_DESIGN$
+						#[[CULTURE] graphical_culture = $CULTURE$ ]
+					}
+				}
+				# Remove the ships used from the remaining strength
+				multiply_variable = { which = num_ship4 value = $SHIP4_SIZE|8$ }
+				subtract_variable = {
+					which = remaining_strength
+					value = num_ship4
+				}
+				] # END SHIP4_DESIGN
+
+				[[SHIP3_DESIGN]
+				set_variable = { which = num_ship3 value = remaining_strength }
+				# These can use a percentage of the strength and count as N size each.
+				multiply_variable = { which = num_ship3 value = $SHIP3_PERCENTAGE|0.333$ }
+				divide_variable = { which = num_ship3 value = $SHIP3_SIZE|4$ }
+				# Truncate to be an integer.
+				floor_variable = num_ship3
+
+				# Add the ships
+				while = {
+					count = num_ship3
+					create_ship = {
+						name = random
+						design = $SHIP3_DESIGN$
+						#[[CULTURE] graphical_culture = $CULTURE$ ]
+					}
+				}
+				# Remove the ships used from the remaining strength
+				multiply_variable = { which = num_ship3 value = $SHIP3_SIZE|4$ }
+				subtract_variable = {
+					which = remaining_strength
+					value = num_ship3
+				}
+				] # END SHIP3_DESIGN
+
+				[[SHIP2_DESIGN]
+				set_variable = { which = num_ship2 value = remaining_strength }
+				# These can use a percentage of the strength and count as N size each.
+				multiply_variable = { which = num_ship2 value = $SHIP2_PERCENTAGE|0.5$ }
+				divide_variable = { which = num_ship2 value = $SHIP2_SIZE|2$ }
+				# Truncate to be an integer.
+				floor_variable = num_ship2
+
+				# Add the ships
+				while = {
+					count = num_ship2
+					create_ship = {
+						name = random
+						design = $SHIP2_DESIGN$
+						#[[CULTURE] graphical_culture = $CULTURE$ ]
+					}
+				}
+				# Remove the ships used from the remaining strength
+				multiply_variable = { which = num_ship2 value = $SHIP2_SIZE|2$ }
+				subtract_variable = {
+					which = remaining_strength
+					value = num_ship2
+				}
+				] # END SHIP2_DESIGN
+
+				# Everything remaining is ship1, which always counts as size 1
+				while = {
+					count = remaining_strength
+					create_ship = {
+						name = random
+						design = $SHIP1_DESIGN$
+						#[[CULTURE] graphical_culture = $CULTURE$ ]
+					}
+				}
+				set_location = {
+					target = event_target:arena_system
+					distance = 175
+					angle = 0
+				}
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 2000
+				save_global_event_target_as = arena_enemy_fleet	
+			}
+		}
+	}
+}
+
+# Fleet 1 is basically the fleet I run in games.
+create_arena_enemy_fleet_1 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Human1"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_1
+		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP2_SIZE = 2
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
+		SHIP3_SIZE = 4
+		SHIP4_DESIGN = "NAME_Arena_KineticCarrier"
+		SHIP4_SIZE = 8
+		SHIP5_DESIGN = "NAME_Arena_ArtilleryXL"
+		SHIP5_SIZE = 8
+	}
+}
+
+# Fleet 2 is a BB skewed version of fleet 1
+create_arena_enemy_fleet_2 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "HumanLarge2"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_2
+		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP2_SIZE = 2
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
+		SHIP3_SIZE = 4
+		SHIP4_DESIGN = "NAME_Arena_KineticCarrier"
+		SHIP4_SIZE = 8
+		SHIP4_PERCENTAGE = 0.45
+		SHIP5_DESIGN = "NAME_Arena_ArtilleryXL"
+		SHIP5_SIZE = 8
+		SHIP5_PERCENTAGE = 0.4
+	}
+}
+
+# Fleet 3 is heavy on the torpedoes
+create_arena_enemy_fleet_3 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "TorpMissle3"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_3
+		SHIP1_DESIGN = "NAME_Arena_TorpedoFrigate"
+		SHIP2_DESIGN = "NAME_Arena_MisslesDestroyer"
+		SHIP2_SIZE = 2
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
+		SHIP3_SIZE = 4
+		SHIP4_DESIGN = "NAME_Arena_KineticCarrier"
+		SHIP4_SIZE = 8
+	}
+}
+
+# Fleet 4 is all missle destroyers and some torpedo frigates
+create_arena_enemy_fleet_4 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Missles4"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_4
+		#CULTURE = "pirate_01"
+		SHIP1_DESIGN = "NAME_Arena_TorpedoFrigate"
+		SHIP2_DESIGN = "NAME_Arena_MisslesDestroyer"
+		SHIP2_PERCENTAGE = 0.8
+	}
+}
+
+# Fleet 5 is a ballistic/AC
+create_arena_enemy_fleet_5 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "ACFleet5"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_5
+		SHIP1_DESIGN = "NAME_Arena_ACMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_ACDestroyer"
+		SHIP2_SIZE = 2
+		SHIP3_DESIGN = "NAME_Arena_ACCruiser"
+		SHIP3_SIZE = 4
+		SHIP4_DESIGN = "NAME_Arena_ArtilleryLarge"
+		SHIP4_SIZE = 8
+		SHIP5_DESIGN = "NAME_Arena_ArtilleryXL"
+		SHIP5_SIZE = 8
+	}
+}
+
+# Fleet 6 is all disrupter corvettes
+create_arena_enemy_fleet_6 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Disrupters6"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_6
+		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+	}
+}
+
+# Fleet 7 is all artillery with a bit of PD
+create_arena_enemy_fleet_7 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Artillery7"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_7
+		SHIP1_DESIGN = "NAME_Arena_ACMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP3_DESIGN = "NAME_Arena_ArtilleryLarge"
+		SHIP3_SIZE = 8
+		SHIP3_PERCENTAGE = 0.8
+		SHIP4_DESIGN = "NAME_Arena_ArtilleryXL"
+		SHIP4_SIZE = 8
+		SHIP4_PERCENTAGE = 0.45
+	}
+}
+
+# Fleet 8 is early game pirate corvettes, destroyers, cruisers, and galleons
+# The galleons aren't technically battleship size, but I'm pretending like they are.
+create_arena_enemy_fleet_8 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "EarlyPirateGalleons8"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_8
+		#CULTURE = "pirate_01"
+		SHIP1_DESIGN = "NAME_Brigand"
+		SHIP2_DESIGN = "NAME_Corsair"
+		SHIP3_DESIGN = "NAME_Black_Earl"
+		SHIP4_DESIGN = "NAME_Pirate_Galleon"
+	}
+}
+
+# Fleet 9 is Marauder corvettes, destroyers, and cruisers
+create_arena_enemy_fleet_9 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "MarauderCDC9"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_9
+		#CULTURE = "pirate_01" # Marauders use the pirate culture.
+		SHIP1_DESIGN = "NAME_Outrider"
+		SHIP2_DESIGN = "NAME_Lancer"
+		SHIP3_DESIGN = "NAME_Void_Champion"
+	}
+}
+
+# Fleet 10 is Marauder corvettes, destroyers, cruisers, and galleons
+create_arena_enemy_fleet_10 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "MarauderGalleons10"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_10
+		#CULTURE = "pirate_01" # Marauders use the pirate culture.
+		SHIP1_DESIGN = "NAME_Outrider"
+		SHIP2_DESIGN = "NAME_Lancer"
+		SHIP3_DESIGN = "NAME_Void_Champion"
+		SHIP4_DESIGN = "NAME_Ancestral_Glory"
+		SHIP4_PERCENTAGE = 0.15
+		SHIP4_SIZE = 16
+	}
+}
+
+# Fleet 11 is caravaneers, they don't have corvettes, so we shift everything down a slot.
+create_arena_enemy_fleet_11 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Caravaneers11"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_11
+		#CULTURE = "" # Caravaneers don't seem to have a graphical culture
+		SHIP1_DESIGN = "NAME_Yojimbo"
+		SHIP2_DESIGN = "NAME_Gunslinger"
+	}
+}
+
+# Fleet 12 is a Torp Cruiser Heavy Fleet
+create_arena_enemy_fleet_12 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "TorpCruisers12"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_12
+		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
+		SHIP3_PERCENTAGE = 0.75
+	}
+}
+
+# Fleet 13 is a BB Heavy Fleet
+create_arena_enemy_fleet_13 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "BBHeavy13"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_13
+		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
+		SHIP4_DESIGN = "NAME_Arena_ArtilleryLarge"
+		SHIP4_PERCENTAGE = 0.6
+	}
+}
+
+# Fleet 14 is XL BB Heavy Fleet
+create_arena_enemy_fleet_14 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "XLHeavy14"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_14
+		SHIP1_DESIGN = "NAME_Arena_ACMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP3_DESIGN = "NAME_Arena_ACCruiser"
+		SHIP4_DESIGN = "NAME_Arena_ArtilleryXL"
+		SHIP4_PERCENTAGE = 0.6
+	}
+}
+
+# Fleet 15 is a Carrier Heavy Fleet
+create_arena_enemy_fleet_15 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Carriers15"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_15
+		SHIP1_DESIGN = "NAME_Arena_ACMixedCorvette"
+		SHIP2_DESIGN = "NAME_Arena_CarrierCruiser"
+		SHIP2_SIZE = 4
+		SHIP3_DESIGN = "NAME_Arena_KineticCarrier"
+		SHIP3_SIZE = 8
+		SHIP4_DESIGN = "NAME_Arena_PlasmaCarrier"
+		SHIP4_SIZE = 8
+	}
+}
+
+# Fleet 16 is the prethoryn swarm crisis
+create_arena_enemy_fleet_16 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Prethoryn16"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_16
+		#CULTURE = "swarm_01"
+		SHIP1_DESIGN = "NAME_Swarm_Small"
+		SHIP2_DESIGN = "NAME_Swarm_Large"
+		SHIP2_SIZE = 8 # Large is a Battleship
+		SHIP2_PERCENTAGE = 0.6 # Overweight battleships
+		SHIP3_DESIGN = "NAME_Swarm_Carrier"
+		SHIP3_SIZE = 8 # Large is a Battleship
+		SHIP3_PERCENTAGE = 0.4 # Overweight Carriers
+		SHIP4_DESIGN = "NAME_Swarm_Queen"
+		SHIP4_SIZE = 16 # Queen is a Titan
+		SHIP4_PERCENTAGE = 0.1 # Queen won't appear at strength < 160
+	}
+}
+
+# Fleet 17 is the unbidden
+create_arena_enemy_fleet_17 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Unbidden17"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_17
+		#CULTURE = "extra_dimensional_01"
+		SHIP1_DESIGN = "NAME_Wraith"
+		SHIP2_DESIGN = "NAME_Phantom"
+		SHIP2_PERCENTAGE = 0.6 # Overweight mediums
+		SHIP3_DESIGN = "NAME_Revenant"
+		SHIP3_PERCENTAGE = 0.4 # Overweight larges
+	}
+}
+
+# Fleet 18 is the contingency
+create_arena_enemy_fleet_18 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "Contingency18"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_18
+		#CULTURE = "ai_01"
+		SHIP1_DESIGN = "NAME_Sterilizer"
+		SHIP2_DESIGN = "NAME_Euthanizer"
+	}
+}
+
+# Fleet 19 is a fallen empire, specifically the Holy Gaurdians
+create_arena_enemy_fleet_19 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "HolyFallen19"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_19
+		#CULTURE = "fallen_empire_01"
+		SHIP1_DESIGN = "NAME_Zealot"
+		SHIP2_SIZE = 4 
+		SHIP2_DESIGN = "NAME_Avatar"
+		SHIP3_SIZE = 8 # It's a titan, but the smallest is a destroyer
+		SHIP3_DESIGN = "NAME_Eternal"
+	}
+}
+# Fleet 20 another fallen empire, the machine one.
+create_arena_enemy_fleet_20 = {
+	create_arena_enemy_type_fleet = {
+		FLEET_NAME = "MachineFallen20"
+		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_20
+		SHIP1_DESIGN = "NAME_Gamma"
+		SHIP2_SIZE = 4
+		SHIP2_DESIGN = "NAME_Beta"
+		SHIP3_SIZE = 8 # It's a titan, but the smallest is a destroyer
+		SHIP3_DESIGN = "NAME_Alpha"
+	}
+}
+
+create_arena_enemy_fleet = {
+	event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 1 } }
+			set_variable = { which = current_wins value = 0 }
+			create_arena_enemy_fleet_1 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 2 } }
+			create_arena_enemy_fleet_2 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 3 } }
+			create_arena_enemy_fleet_3 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 4 } }
+			create_arena_enemy_fleet_4 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 5 } }
+			create_arena_enemy_fleet_5 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 6 } }
+			create_arena_enemy_fleet_6 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 7 } }
+			create_arena_enemy_fleet_7 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 8 } }
+			create_arena_enemy_fleet_8 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 9 } }
+			create_arena_enemy_fleet_9 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 10 } }
+			create_arena_enemy_fleet_10 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 11 } }
+			create_arena_enemy_fleet_11 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 12 } }
+			create_arena_enemy_fleet_12 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 13 } }
+			create_arena_enemy_fleet_13 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 14 } }
+			create_arena_enemy_fleet_14 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 15 } }
+			create_arena_enemy_fleet_15 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 16 } }
+			create_arena_enemy_fleet_16 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 17 } }
+			create_arena_enemy_fleet_17 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 18 } }
+			create_arena_enemy_fleet_18 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 19 } }
+			create_arena_enemy_fleet_19 = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 20 } }
+			create_arena_enemy_fleet_20 = yes
+		}
+	  else = {
+			set_variable = { which = current_enemy_fleet value = 1 }
+			set_variable = { which = current_wins value = 0 }
+			create_arena_enemy_fleet_1 = yes
+		}
+	}
+}
+
+create_arena_ally_fleet_ships = {
+	set_variable = { which = current_design value = event_target:arena_enemy_country.current_ally$NUM$_design }
+	while = {
+		count = event_target:arena_enemy_country.current_ally$NUM$_count
+		if = {
+			limit = { check_variable = { which = current_design value = 0 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_PlasmaMixedCorvette"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 1 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_DisrupterMixedCorvette"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 2 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_ACMixedCorvette"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 3 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_TorpedoFrigate"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 4 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_NeutronFrigate"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 100 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_LaserDestroyer"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 101 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_ACDestroyer"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 102 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_PDDestroyer"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 103 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_MisslesDestroyer"
+			}
+		} 
+		else_if = {
+			limit = { check_variable = { which = current_design value = 200 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_PlasmaCruiser"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 201 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_TorpedoCruiser"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 202 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_CarrierCruiser"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 202 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_ACCruiser"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 300 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_ArtilleryLarge"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 301 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_ArtilleryXL"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 302 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_PlasmaCarrier"
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_design value = 303 }}
+			create_ship = {
+				name = random
+				design = "NAME_Arena_KineticCarrier"
+			}
+		}
+	}
+}
+
+create_arena_ally_fleet_name = {
+	event_target:arena_enemy_country = {
+		create_fleet = {
+			name = $NAME$
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				can_disband = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = event_target:arena_ally_country
+				create_arena_ally_fleet_ships = { NUM = 1 }
+				create_arena_ally_fleet_ships = { NUM = 2 }
+				create_arena_ally_fleet_ships = { NUM = 3 }
+				create_arena_ally_fleet_ships = { NUM = 4 }
+				create_arena_ally_fleet_ships = { NUM = 5 }
+				create_arena_ally_fleet_ships = { NUM = 6 }
+				create_arena_ally_fleet_ships = { NUM = 7 }
+				create_arena_ally_fleet_ships = { NUM = 8 }
+				create_arena_ally_fleet_ships = { NUM = 9 }
+				create_arena_ally_fleet_ships = { NUM = 10 }
+				create_arena_ally_fleet_ships = { NUM = 11 }
+				create_arena_ally_fleet_ships = { NUM = 12 }
+				create_arena_ally_fleet_ships = { NUM = 13 }
+				create_arena_ally_fleet_ships = { NUM = 14 }
+				create_arena_ally_fleet_ships = { NUM = 15 }
+				set_location = {
+					target = event_target:arena_system
+					distance = 175
+					angle = 180
+				}
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 2000
+				save_global_event_target_as = arena_ally_fleet	
+			}
+		}
+	}
+}
+
+create_arena_ally_fleet = {
+	event_target:arena_enemy_country = {
+		# Name it based on the current randomization type, note that the variable was already
+		# incremented elsewere.
+		if = {
+			limit = { check_variable = { which = current_randomize_type value = 2 } }
+			create_arena_ally_fleet_name = { NAME = "Champion" }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_type value = 3 } }
+			create_arena_ally_fleet_name = { NAME = "Challenger1" }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_type value = 4 } }
+			create_arena_ally_fleet_name = { NAME = "Challenger2" }
+		}
+		else = {
+			create_arena_ally_fleet_name = { NAME = "Challenger3" }
+		}
+  }
+}
+
+save_current_fleet_as_champion = {
+	event_target:arena_enemy_country = {
+  	set_variable = { which = champion_ally1_design value = current_ally1_design }
+		set_variable = { which = champion_ally1_count value = current_ally1_count }
+		set_variable = { which = champion_ally2_design value = current_ally2_design }
+		set_variable = { which = champion_ally2_count value = current_ally2_count }
+		set_variable = { which = champion_ally3_design value = current_ally3_design }
+		set_variable = { which = champion_ally3_count value = current_ally3_count }
+		set_variable = { which = champion_ally4_design value = current_ally4_design }
+		set_variable = { which = champion_ally4_count value = current_ally4_count }
+		set_variable = { which = champion_ally5_design value = current_ally5_design }
+		set_variable = { which = champion_ally5_count value = current_ally5_count }
+		set_variable = { which = champion_ally6_design value = current_ally6_design }
+		set_variable = { which = champion_ally6_count value = current_ally6_count }
+		set_variable = { which = champion_ally7_design value = current_ally7_design }
+		set_variable = { which = champion_ally7_count value = current_ally7_count }
+		set_variable = { which = champion_ally8_design value = current_ally8_design }
+		set_variable = { which = champion_ally8_count value = current_ally8_count }
+		set_variable = { which = champion_ally9_design value = current_ally9_design }
+		set_variable = { which = champion_ally9_count value = current_ally9_count }
+		set_variable = { which = champion_ally10_design value = current_ally10_design }
+		set_variable = { which = champion_ally10_count value = current_ally10_count }
+		set_variable = { which = champion_ally11_design value = current_ally11_design }
+		set_variable = { which = champion_ally11_count value = current_ally11_count }
+		set_variable = { which = champion_ally12_design value = current_ally12_design }
+		set_variable = { which = champion_ally12_count value = current_ally12_count }
+		set_variable = { which = champion_ally13_design value = current_ally13_design }
+		set_variable = { which = champion_ally13_count value = current_ally13_count }
+		set_variable = { which = champion_ally14_design value = current_ally14_design }
+		set_variable = { which = champion_ally14_count value = current_ally14_count }
+		set_variable = { which = champion_ally15_design value = current_ally15_design }
+		set_variable = { which = champion_ally15_count value = current_ally15_count }
+	}
+}
+
+reset_current_fleet_from_champion = {
+	event_target:arena_enemy_country = {
+  	set_variable = { which = current_ally1_design value = champion_ally1_design }
+		set_variable = { which = current_ally1_count value = champion_ally1_count }
+		set_variable = { which = current_ally2_design value = champion_ally2_design }
+		set_variable = { which = current_ally2_count value = champion_ally2_count }
+		set_variable = { which = current_ally3_design value = champion_ally3_design }
+		set_variable = { which = current_ally3_count value = champion_ally3_count }
+		set_variable = { which = current_ally4_design value = champion_ally4_design }
+		set_variable = { which = current_ally4_count value = champion_ally4_count }
+		set_variable = { which = current_ally5_design value = champion_ally5_design }
+		set_variable = { which = current_ally5_count value = champion_ally5_count }
+		set_variable = { which = current_ally6_design value = champion_ally6_design }
+		set_variable = { which = current_ally6_count value = champion_ally6_count }
+		set_variable = { which = current_ally7_design value = champion_ally7_design }
+		set_variable = { which = current_ally7_count value = champion_ally7_count }
+		set_variable = { which = current_ally8_design value = champion_ally8_design }
+		set_variable = { which = current_ally8_count value = champion_ally8_count }
+		set_variable = { which = current_ally9_design value = champion_ally9_design }
+		set_variable = { which = current_ally9_count value = champion_ally9_count }
+		set_variable = { which = current_ally10_design value = champion_ally10_design }
+		set_variable = { which = current_ally10_count value = champion_ally10_count }
+		set_variable = { which = current_ally11_design value = champion_ally11_design }
+		set_variable = { which = current_ally11_count value = champion_ally11_count }
+		set_variable = { which = current_ally12_design value = champion_ally12_design }
+		set_variable = { which = current_ally12_count value = champion_ally12_count }
+		set_variable = { which = current_ally13_design value = champion_ally13_design }
+		set_variable = { which = current_ally13_count value = champion_ally13_count }
+		set_variable = { which = current_ally14_design value = champion_ally14_design }
+		set_variable = { which = current_ally14_count value = champion_ally14_count }
+		set_variable = { which = current_ally15_design value = champion_ally15_design }
+		set_variable = { which = current_ally15_count value = champion_ally15_count }
+	}
+}
+
+update_fleet_slot_num = {
+	event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_ally$SLOT$_count value = 1 } }
+			# Pick something Battleship size.
+			random_list = {		
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 300 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 301 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 302 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 303 } }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_ally$SLOT$_count value = 2 } }
+			# Pick something Cruiser size.
+			random_list = {		
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 200 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 201 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 202 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 203 } }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = current_ally$SLOT$_count value = 4 } }
+			# Pick something destroyer size.
+			random_list = {		
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 100 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 101 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 102 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 103 } }
+			}
+		}
+		else = {
+			# Pick something corvette or frigate size.
+			random_list = {		
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 0 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 1 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 2 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 3 } }
+				1 = { set_variable = { which = current_ally$SLOT$_design value = 4 } }
+			}
+			
+		}
+	}
+}
+
+update_fleet_slot = {
+	event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_randomize_slot value = 1 } }
+			update_fleet_slot_num = { SLOT = 1 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 2 } }
+			update_fleet_slot_num = { SLOT = 2 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 3 } }
+			update_fleet_slot_num = { SLOT = 3 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 4 } }
+			update_fleet_slot_num = { SLOT = 4 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 5 } }
+			update_fleet_slot_num = { SLOT = 5 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 6 } }
+			update_fleet_slot_num = { SLOT = 6 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 7 } }
+			update_fleet_slot_num = { SLOT = 7 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 8 } }
+			update_fleet_slot_num = { SLOT = 8 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 9 } }
+			update_fleet_slot_num = { SLOT = 9 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 10 } }
+			update_fleet_slot_num = { SLOT = 10 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 11 } }
+			update_fleet_slot_num = { SLOT = 11 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 12 } }
+			update_fleet_slot_num = { SLOT = 12 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 13 } }
+			update_fleet_slot_num = { SLOT = 13 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 14 } }
+			update_fleet_slot_num = { SLOT = 14 }	
+		}
+		else = {
+			update_fleet_slot_num = { SLOT = 15 }	
+		}
+	}
+}
+
+replace_fleet_slot_num = {
+	event_target:arena_enemy_country = {
+		set_variable = { which = current_ally$SLOT$_count value = 2	}
+		random_list = {		
+			1 = { set_variable = { which = current_ally$SLOT$_count value = 1	} }
+			1 = { set_variable = { which = current_ally$SLOT$_count value = 2	} }
+			1 = { set_variable = { which = current_ally$SLOT$_count value = 4	} }
+			1 = { set_variable = { which = current_ally$SLOT$_count value = 8	} }
+		}
+		update_fleet_slot_num = { SLOT = $SLOT$ }
+	}
+}
+
+replace_fleet_slot = {
+	event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_randomize_slot value = 1 } }
+			replace_fleet_slot_num = { SLOT = 1 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 2 } }
+			replace_fleet_slot_num = { SLOT = 2 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 3 } }
+			replace_fleet_slot_num = { SLOT = 3 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 4 } }
+			replace_fleet_slot_num = { SLOT = 4 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 5 } }
+			replace_fleet_slot_num = { SLOT = 5 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 6 } }
+			replace_fleet_slot_num = { SLOT = 6 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 7 } }
+			replace_fleet_slot_num = { SLOT = 7 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 8 } }
+			replace_fleet_slot_num = { SLOT = 8 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 9 } }
+			replace_fleet_slot_num = { SLOT = 9 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 10 } }
+			replace_fleet_slot_num = { SLOT = 10 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 11 } }
+			replace_fleet_slot_num = { SLOT = 11 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 12 } }
+			replace_fleet_slot_num = { SLOT = 12 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 13 } }
+			replace_fleet_slot_num = { SLOT = 13 }	
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_slot value = 14 } }
+			replace_fleet_slot_num = { SLOT = 14 }	
+		}
+		else = {
+			replace_fleet_slot_num = { SLOT = 15 }	
+		}
+	}
+}
+
+incremement_randomize_slot = {
+	event_target:arena_enemy_country = {
+		change_variable = { which = current_randomize_slot value = 1 }
+		if = {
+			limit = { check_variable = { which = current_randomize_slot value > 15 } }
+			set_variable = { which = current_randomize_slot value = 1 }
+		}
+	}
+}
+
+update_ally_fleet = {
+	event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_randomize_type value = 1 } }
+			# Reset to the best fleet.
+			reset_current_fleet_from_champion = yes
+			change_variable = { which = current_randomize_type value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_type value = 2 } }
+			# Change one slot for another ship of the same type
+			reset_current_fleet_from_champion = yes
+			change_variable = { which = current_randomize_type value = 1 }
+			update_fleet_slot = yes
+			incremement_randomize_slot = yes
+		}
+		else_if = {
+			limit = { check_variable = { which = current_randomize_type value = 3 } }
+			# Change one slot for a different ship type
+			reset_current_fleet_from_champion = yes
+			change_variable = { which = current_randomize_type value = 1 }
+			replace_fleet_slot = yes
+			incremement_randomize_slot = yes
+		}
+		else = {
+			# Randomize the next five slots. 5 + 1 + 1 = 7 is co-prime with 15, so
+			# each randomization type will eventually hit every slot.
+			reset_current_fleet_from_champion = yes
+			set_variable = { which = current_randomize_type value = 1 }
+			while = {
+				count = 5
+				replace_fleet_slot = yes
+				incremement_randomize_slot = yes
+			}
+		}
+	}
+}
+
+record_ally_win = {
+  event_target:arena_enemy_country = {
+		change_variable = { which = current_wins value = 1 }
+		if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 1 } }
+			change_variable = { which = enemy_fleet_strength_1 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 2 } }
+			change_variable = { which = enemy_fleet_strength_2 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 3 } }
+			change_variable = { which = enemy_fleet_strength_3 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 4 } }
+			change_variable = { which = enemy_fleet_strength_4 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 5 } }
+			change_variable = { which = enemy_fleet_strength_5 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 6 } }
+			change_variable = { which = enemy_fleet_strength_6 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 7 } }
+			change_variable = { which = enemy_fleet_strength_7 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 8 } }
+			change_variable = { which = enemy_fleet_strength_8 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 9 } }
+			change_variable = { which = enemy_fleet_strength_9 value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 10 } }
+			change_variable = { which = enemy_fleet_strength_10 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 11 } }
+			change_variable = { which = enemy_fleet_strength_11 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 12 } }
+			change_variable = { which = enemy_fleet_strength_12 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 13 } }
+			change_variable = { which = enemy_fleet_strength_13 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 14 } }
+			change_variable = { which = enemy_fleet_strength_14 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 15 } }
+			change_variable = { which = enemy_fleet_strength_15 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 16 } }
+			change_variable = { which = enemy_fleet_strength_16 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 17 } }
+			change_variable = { which = enemy_fleet_strength_17 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 18 } }
+			change_variable = { which = enemy_fleet_strength_18 value = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 19 } }
+			change_variable = { which = enemy_fleet_strength_19 value = 1 }
+		}
+		else = {
+			change_variable = { which = enemy_fleet_strength_20 value = 5 }
+			# Reset to the first fleet.
+			set_variable = { which = current_enemy_fleet value = 0 }
+			if = {
+				limit = { check_variable = { which = current_wins value >= 13 }}
+				save_current_fleet_as_champion = yes
+			}
+			# Pick a new ally fleet.
+			update_ally_fleet = yes
+		}
+		# Go to the next enemy fleet.
+		change_variable = { which = current_enemy_fleet value = 1 }
+	}
+}
+
+record_ally_loss = {
+  event_target:arena_enemy_country = {
+		if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 1 } }
+			change_variable = { which = enemy_fleet_strength_1 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 2 } }
+			change_variable = { which = enemy_fleet_strength_2 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 3 } }
+			change_variable = { which = enemy_fleet_strength_3 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 4 } }
+			change_variable = { which = enemy_fleet_strength_4 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 5 } }
+			change_variable = { which = enemy_fleet_strength_5 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 6 } }
+			change_variable = { which = enemy_fleet_strength_6 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 7 } }
+			change_variable = { which = enemy_fleet_strength_7 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 8 } }
+			change_variable = { which = enemy_fleet_strength_8 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 9 } }
+			change_variable = { which = enemy_fleet_strength_9 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 10 } }
+			change_variable = { which = enemy_fleet_strength_10 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 11 } }
+			change_variable = { which = enemy_fleet_strength_11 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 12 } }
+			change_variable = { which = enemy_fleet_strength_12 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 13 } }
+			change_variable = { which = enemy_fleet_strength_13 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 14 } }
+			change_variable = { which = enemy_fleet_strength_14 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 15 } }
+			change_variable = { which = enemy_fleet_strength_15 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 16 } }
+			change_variable = { which = enemy_fleet_strength_16 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 17 } }
+			change_variable = { which = enemy_fleet_strength_17 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 18 } }
+			change_variable = { which = enemy_fleet_strength_18 value = -1 }
+		}
+		else_if = {
+			limit = { check_variable = { which = current_enemy_fleet value = 19 } }
+			change_variable = { which = enemy_fleet_strength_19 value = -1 }
+		}
+		else = {
+			change_variable = { which = enemy_fleet_strength_20 value = -1 }
+			# Reset to the first fleet.
+			set_variable = { which = current_enemy_fleet value = 0 }
+			# Pick a new ally fleet.
+			if = {
+				limit = { check_variable = { which = current_wins value >= 13 }}
+				save_current_fleet_as_champion = yes
+			}
+			update_ally_fleet = yes
+		}
+		# Go to the next enemy fleet.
+		change_variable = { which = current_enemy_fleet value = 1 }
+	}
+}

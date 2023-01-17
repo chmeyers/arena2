@@ -1,0 +1,148 @@
+# Home System
+
+# Arena System
+arena_system_01 = {
+	class = "sc_arena_system"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 60
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 120
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 180
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 240
+	}
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+
+	usage = misc_system_init
+	usage_odds = 2
+
+	flags = { arena_battle_system }
+}
+
+# Home Initializer
+arena_home_init = {
+	class = "rl_starting_stars"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 50
+	}
+
+	usage = empire_init
+
+	flags = { empire_home_system arena_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 25 }
+		has_ring = no
+	}
+
+	change_orbit = 50
+
+	planet = {
+		count = { min = 1 max = 3 }
+		class = pc_gaia
+		orbit_distance = 0
+		orbit_angle = { min = 40 max = 100 }
+	}
+
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_distance = 20
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = 10
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_gaia
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		count = 1
+		orbit_distance = 20
+		home_planet = yes
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 25 max = 25 }
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			generate_empire_home_planet = yes
+			prevent_anomaly = yes
+		}
+
+		change_orbit = 5
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_gaia
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		count = { min = 2 max = 4 }
+		orbit_distance = 20
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = 10
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_gaia
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = 15
+
+		moon = {
+			count = { min = 0 max = 3 }
+			class = pc_gaia
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+}

@@ -1,0 +1,1849 @@
+# Corvettes
+ship_design = {
+	name = "NAME_Arena_LaserArmorCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_LaserShieldCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_HARDENER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_LaserMixedCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_LaserCrystalCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_MassArmorCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_MassShieldCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_HARDENER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_MassMixedCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_MassCrystalCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_PlasmaArmorCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_PlasmaShieldCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_HARDENER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_PlasmaMixedCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_PlasmaCrystalCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_DisrupterMixedCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_DISRUPTOR_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_DISRUPTOR_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_DISRUPTOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_ACMixedCorvette"
+	ship_size = corvette
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_S3"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_CRYSTAL_ARMOR_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_SWARM_ADVANCED"
+}
+
+# Frigates
+ship_design = {
+	name = "NAME_Arena_TorpedoFrigate"
+	ship_size = frigate
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_M1S1"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "TORPEDO_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_TORPEDO_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_NeutronFrigate"
+	ship_size = frigate
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CORVETTE_MID_M1S1"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "ENERGY_TORPEDO_2"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "CORVETTE_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_TORPEDO_ADVANCED"
+}
+
+# Generic Destroyer
+ship_design = {
+	name = "NAME_Arena_LaserDestroyer"
+	ship_size = destroyer
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="DESTROYER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_LINE_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_ACDestroyer"
+	ship_size = destroyer
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="DESTROYER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_LINE_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_PDDestroyer"
+	ship_size = destroyer
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "DESTROYER_BOW_S3"
+		slot = "bow"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_PD2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="DESTROYER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_PICKET_ADVANCED"
+}
+
+ship_design = {
+	name = "NAME_Arena_MisslesDestroyer"
+	ship_size = destroyer
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "SWARMER_MISSILE_2"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "MISSILE_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "MISSILE_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_SHIELD_5"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "MISSILE_5"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "MISSILE_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component="EMPTY_DRIVE"
+	required_component="DESTROYER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component="COMBAT_COMPUTER_LINE_ADVANCED"
+}
+
+# Cruiser
+ship_design = {
+	name = "NAME_Arena_PlasmaCruiser"
+	ship_size = cruiser
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CRUISER_BOW_M2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_M3"
+		slot = "mid"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_ARMOR_5"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_LINE_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Arena_TorpedoCruiser"
+	ship_size = cruiser
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CRUISER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "TORPEDO_01"
+			template = "TORPEDO_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_M2S2"
+		slot = "mid"
+
+		component = {
+			slot = "TORPEDO_01"
+			template = "TORPEDO_3"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "TORPEDO_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_ARMOR_5"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_TORPEDO_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Arena_CarrierCruiser"
+	ship_size = cruiser
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CRUISER_BOW_L1"
+		slot = "bow"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_S2HB"
+		slot = "mid"
+
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_ARMOR_5"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Arena_ACCruiser"
+	ship_size = cruiser
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "CRUISER_BOW_M2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_M3"
+		slot = "mid"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_ARMOR_5"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_LINE_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "CRUISER_ZERO_POINT_REACTOR"
+}
+
+# Battleship
+ship_design = {
+	name = "NAME_Arena_ArtilleryLarge"
+	ship_size = battleship
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "BATTLESHIP_BOW_L2"
+		slot = "bow"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_MID_L2M2"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_STERN_M2"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Arena_ArtilleryXL"
+	ship_size = battleship
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "BATTLESHIP_BOW_M2S4"
+		slot = "bow"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "ARC_EMITTER_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_MID_L3"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_STERN_M2"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+}
+
+# Carrier
+ship_design = {
+	name = "NAME_Arena_PlasmaCarrier"
+	ship_size = battleship
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "BATTLESHIP_BOW_M1S2SHB"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_MID_S4LHB"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_PLASMA_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_STERN_M2"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_PLASMA_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Arena_KineticCarrier"
+	ship_size = battleship
+	is_event_design = yes
+	is_special_buildable = yes
+
+	section = {
+		template = "BATTLESHIP_BOW_M1S2SHB"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_MID_S4LHB"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_STERN_M2"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_AUTOCANNON_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AFTERBURNER_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "AFTERBURNER_2"
+		}
+	}
+	required_component = "EMPTY_DRIVE"
+	required_component = "COMBAT_COMPUTER_CARRIER_ADVANCED"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+}
