@@ -144,7 +144,9 @@ create_arena_enemy_fleet_1 = {
 	create_arena_enemy_type_fleet = {
 		FLEET_NAME = "Human1"
 		STRENGTH = event_target:arena_enemy_country.enemy_fleet_strength_1
-		SHIP1_DESIGN = "NAME_Arena_DisrupterMixedCorvette"
+		SHIP1_DESIGN = "NAME_Arena_TorpedoFrigate"
+		SHIP2_DESIGN = "NAME_Arena_PDDestroyer"
+		SHIP3_DESIGN = "NAME_Arena_TorpedoCruiser"
 	}
 }
 
@@ -1203,18 +1205,15 @@ record_ally_loss = {
 
 record_ally_loss_single = {
 	event_target:arena_enemy_country = {
-		random_list = {		
-			1 = { change_variable = { which = enemy_fleet_strength_1 value = -1 } }
-			9 = { }
-		}
-		update_ally_fleet = yes
+		change_variable = { which = enemy_fleet_strength_1 value = -1 }
+		#update_ally_fleet = yes
 	}
 }
 
 record_ally_win_single = {
 	event_target:arena_enemy_country = {
 		change_variable = { which = enemy_fleet_strength_1 value = 1 }
-		save_current_fleet_as_champion = yes
-		update_ally_fleet = yes
+		#save_current_fleet_as_champion = yes
+		#update_ally_fleet = yes
 	}
 }

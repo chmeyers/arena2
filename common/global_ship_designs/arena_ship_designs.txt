@@ -1,3 +1,9 @@
+
+# Corvettes are countered by Strike Craft/Carriers
+# Strike Craft are countered by PD Destroyers
+# Carriers are countered by Frigates
+
+
 # Corvettes
 ship_design = {
 	name = "NAME_Arena_LaserArmorCorvette"

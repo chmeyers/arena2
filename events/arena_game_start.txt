@@ -100,7 +100,7 @@ event = {# Setup the systems
 				# Ugh, why aren't arrays supported....
 				# Initial enemy fleet strengths
 				set_variable = { which = current_enemy_fleet value = 1 }
-				set_variable = { which = enemy_fleet_strength_1 value = 120 }
+				set_variable = { which = enemy_fleet_strength_1 value = 90 }
 				set_variable = { which = enemy_fleet_strength_2 value = 120 }
 				set_variable = { which = enemy_fleet_strength_3 value = 120 }
 				set_variable = { which = enemy_fleet_strength_4 value = 120 }
@@ -122,36 +122,36 @@ event = {# Setup the systems
 				set_variable = { which = enemy_fleet_strength_20 value = 10 }
 
 				# Initial ally fleet composition.
-				set_variable = { which = current_ally1_design value = 1 }
-				set_variable = { which = current_ally1_count value = 8 }
-				set_variable = { which = current_ally2_design value = 1 }
-				set_variable = { which = current_ally2_count value = 8 }
-				set_variable = { which = current_ally3_design value = 1 }
-				set_variable = { which = current_ally3_count value = 8 }
-				set_variable = { which = current_ally4_design value = 1 }
-				set_variable = { which = current_ally4_count value = 8 }
-				set_variable = { which = current_ally5_design value = 1 }
-				set_variable = { which = current_ally5_count value = 8 }
-				set_variable = { which = current_ally6_design value = 1 }
-				set_variable = { which = current_ally6_count value = 8 }
-				set_variable = { which = current_ally7_design value = 1 }
-				set_variable = { which = current_ally7_count value = 8 }
-				set_variable = { which = current_ally8_design value = 1 }
-				set_variable = { which = current_ally8_count value = 8 }
-				set_variable = { which = current_ally9_design value = 1 }
-				set_variable = { which = current_ally9_count value = 8 }
-				set_variable = { which = current_ally10_design value = 1 }
-				set_variable = { which = current_ally10_count value = 8 }
-				set_variable = { which = current_ally11_design value = 1 }
-				set_variable = { which = current_ally11_count value = 8 }
-				set_variable = { which = current_ally12_design value = 1 }
-				set_variable = { which = current_ally12_count value = 8 }
-				set_variable = { which = current_ally13_design value = 1 }
-				set_variable = { which = current_ally13_count value = 8 }
-				set_variable = { which = current_ally14_design value = 1 }
-				set_variable = { which = current_ally14_count value = 8 }
-				set_variable = { which = current_ally15_design value = 1 }
-				set_variable = { which = current_ally15_count value = 8 }
+				set_variable = { which = current_ally1_design value = 304 }
+				set_variable = { which = current_ally1_count value = 1 }
+				set_variable = { which = current_ally2_design value = 304 }
+				set_variable = { which = current_ally2_count value = 1 }
+				set_variable = { which = current_ally3_design value = 304 }
+				set_variable = { which = current_ally3_count value = 1 }
+				set_variable = { which = current_ally4_design value = 304 }
+				set_variable = { which = current_ally4_count value = 1 }
+				set_variable = { which = current_ally5_design value = 304 }
+				set_variable = { which = current_ally5_count value = 1 }
+				set_variable = { which = current_ally6_design value = 304 }
+				set_variable = { which = current_ally6_count value = 1 }
+				set_variable = { which = current_ally7_design value = 304 }
+				set_variable = { which = current_ally7_count value = 1 }
+				set_variable = { which = current_ally8_design value = 304 }
+				set_variable = { which = current_ally8_count value = 1 }
+				set_variable = { which = current_ally9_design value = 304 }
+				set_variable = { which = current_ally9_count value = 1 }
+				set_variable = { which = current_ally10_design value = 304 }
+				set_variable = { which = current_ally10_count value = 1 }
+				set_variable = { which = current_ally11_design value = 304 }
+				set_variable = { which = current_ally11_count value = 1 }
+				set_variable = { which = current_ally12_design value = 304 }
+				set_variable = { which = current_ally12_count value = 1 }
+				set_variable = { which = current_ally13_design value = 304 }
+				set_variable = { which = current_ally13_count value = 1 }
+				set_variable = { which = current_ally14_design value = 304 }
+				set_variable = { which = current_ally14_count value = 1 }
+				set_variable = { which = current_ally15_design value = 304 }
+				set_variable = { which = current_ally15_count value = 1 }
 
 				set_variable = { which = current_randomize_slot value = 1 }
 				set_variable = { which = current_randomize_type value = 1 }
