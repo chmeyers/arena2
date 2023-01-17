@@ -21,10 +21,10 @@ country_event = {
 			}
 			if = {
 				limit = { fromfrom = { is_same_value = event_target:arena_ally_fleet } }
-				record_ally_win = yes
+				record_ally_win_single = yes
 			}
 			else = {
-				record_ally_loss = yes
+				record_ally_loss_single = yes
 			}
 			this = {
 				country_event = {
